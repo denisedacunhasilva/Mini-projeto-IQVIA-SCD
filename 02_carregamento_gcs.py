@@ -13,6 +13,7 @@ def executar_load_gcs(pasta_local, bucket_nome, project_id):
         destinos = {
             'MS_12_2022_sample.csv': 'bronze/fato_vendas/MS_12_2022_sample.csv',
             'filial-brick_sample.csv': 'bronze/dim_filial/filial-brick_sample.csv'
+
         }
 
         for arquivo, caminho_gcs in destinos.items():
