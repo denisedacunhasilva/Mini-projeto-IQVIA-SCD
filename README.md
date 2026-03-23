@@ -22,6 +22,26 @@ O fluxo de dados foi desenhado para garantir a integridade dos identificadores e
 
 **Diagramação:** Draw.io / VS Code Integration
 
+**🛠️ Pré-requisitos e Instalação**
+
+Para reproduzir este ambiente localmente, recomenda-se o uso de um ambiente virtual (venv).
+
+**1. Instalação das dependências**
+
+Com o Python instalado, execute no terminal:
+
+pip install -r requirements.txt
+
+**2. Configuração da Nuvem (GCP)**
+Este projeto exige uma Service Account do Google Cloud com permissões de:
+
+Storage Admin (para o bucket iqvia_landing)
+
+BigQuery Admin (para criação de tabelas e execução de DML)
+
+Certifique-se de configurar a variável de ambiente:
+export GOOGLE_APPLICATION_CREDENTIALS="caminho/para/sua/chave.json"
+
 **🚀 Como o Projeto Funciona**
 
 **1. Extração e Ingestão (/scripts)**

@@ -1,0 +1,14 @@
+# Pastas de ambiente virtual
+venv/
+.venv/
+env/
+__pycache__/
+
+# Credenciais e chaves sensíveis
+credenciais.json
+*.json
+
+# Arquivos de sistema e IDEs
+.vscode/
+.DS_Store
+Thumbs.db
