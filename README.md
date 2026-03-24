@@ -11,7 +11,7 @@ O fluxo de dados foi desenhado para garantir a integridade dos identificadores e
 
 **Gold (Data Warehouse):** Tabela final com a lógica de SCD Tipo 2, permitindo consultar o histórico de preços através de datas de validade e flags de status.
 
-![Diagrama da Arquitetura](./docs/Diagrama_IQVIA.png)
+![Diagrama da Arquitetura](./docs/diagrama/Diagrama_IQVIA.png)
 
 **🛠️ Tecnologias e Ferramentas**
 **Linguagem:** Python 3.13 (Extração e Ingestão)
@@ -55,26 +55,29 @@ Foram desenvolvidas queries de comparação para garantir que o dado na camada G
 
 **Evidência SCD Tipo 2.**
 
-![Evidencia historico](./docs/antes_e_depois_alteracao_historico.png)
+![Evidencia historico](./docs/evidencias/antes_e_depois_alteracao_historico.png)
 
 
-    ### 📂 Estrutura do Repositório
+### 📂 Estrutura do Repositório
 
-    ```text
-    PROJETO-IQVIA-SCD/
-    ├── data/
-    │   ├── raw/             # Planilhas .xlsx originais
-    │   └── processed/       # CSVs padronizados para o BigQuery
-    ├── docs/
-    │   └── Diagrama_IQVIA   # Documentação visual da arquitetura
-    ├── sql/
-    │   ├── 01_DDL.sql       # Definição das tabelas
-    │   ├── 02_DML_SCD2.sql  # Lógica de carga e histórico
-    │   └── 03_Auditoria.sql # Queries de validação
-    ├── 01_extracao.py       # Script de conversão Python
-    └── README.md            # Documentação do projeto
-
-
+```text
+PROJETO-IQVIA-SCD/
+├── data/
+│   ├── processed/       # CSVs padronizados prontos para ingestão
+│   └── raw/             # Planilhas .xlsx originais (dados brutos)
+├── docs/
+│   ├── diagrama/        # Arquivos de modelagem visual da arquitetura (Draw.io e PNG)
+│   └── evidencias/      # Prints comprovando o funcionamento do histórico (SCD Tipo 2)
+├── sql/
+│   ├── 01_DDL.sql       # Scripts de criação das tabelas (Bronze, Silver e Gold)
+│   ├── 02_DML_SCD2_Motor.sql # Lógica central do pipeline e gestão de histórico SCD2
+│   ├── 03_DML_Compara_Bronze_x_Gold.sql # Validação de integridade entre camadas
+│   └── 04_DML_Auditoria_Gold.sql # Query final para auditoria de preços e status
+├── .gitignore           # Regras de exclusão de arquivos para o repositório
+├── 01_extracao.py       # Script Python para conversão de Excel para CSV preservando tipagem
+├── 02_carregamento_gcs.py # Script Python para upload automático no Google Cloud Storage
+├── README.md            # Documentação principal do projeto
+└── requirements.txt     # Lista de dependências e bibliotecas Python utilizadas
 
 
 🏁 **Conclusão**
