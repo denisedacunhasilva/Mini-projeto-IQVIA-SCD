@@ -1,3 +1,5 @@
+https://drive.google.com/file/d/1PpVaIYqVENvCNOYHnVonJ_wB2QTPxn5_/view?usp=sharing
+
 [miniprojeto-iqvia-scd.pptx](https://github.com/user-attachments/files/27204499/miniprojeto-iqvia-scd.pptx)
 
 **💊 Pipeline de Dados IQVIA - Arquitetura Medallion com SCD Tipo 2**
