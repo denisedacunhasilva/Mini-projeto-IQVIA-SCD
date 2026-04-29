@@ -1,3 +1,5 @@
+[miniprojeto-iqvia-scd.pptx](https://github.com/user-attachments/files/27204499/miniprojeto-iqvia-scd.pptx)
+
 **💊 Pipeline de Dados IQVIA - Arquitetura Medallion com SCD Tipo 2**
 Este projeto implementa um pipeline de dados ponta a ponta (End-to-End) para o processamento de dados farmacêuticos da IQVIA. A solução utiliza uma arquitetura ELT (Extract, Load, Transform) hospedada na Google Cloud Platform (GCP), aplicando os conceitos de Medallion Architecture (Bronze, Silver e Gold) e gestão de histórico via Slowly Changing Dimension (SCD) Tipo 2.
 
